@@ -103,7 +103,6 @@
 
 
         const passing = (gender === 'female') || (age < 18 || age > 60)
-        console.log(age, passing);
 
         
         $('.passing').text(passing
@@ -116,7 +115,8 @@
         new faceapi.draw.DrawTextField(
           [
             `${faceapi.utils.round(interpolatedAge, 0)} years`,
-            `${gender} (${faceapi.utils.round(genderProbability)})`
+            `${gender} (${faceapi.utils.round(genderProbability)})`,
+            `${passing ? 'PASSING' : 'NOT PASSING'}`
           ],
           result.detection.box.bottomRight
         ).draw(canvas)
